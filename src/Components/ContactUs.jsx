@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 
 const ContactUs = () => {
@@ -19,6 +20,7 @@ const ContactUs = () => {
   const handleClosePopup = () => {
     setShowPopup(false);
   }
+  
   return (
     
     <div className="bg-gradient-to-br from-[#606ada] to-[#1BCEDF] via-black">  {/* background colour*/}
@@ -30,53 +32,47 @@ const ContactUs = () => {
       </div>
       )}
       {/*navigation bar*/}
-    <header className="fixed top-0 left-0 w-full z-20 bg-gradient-to-tr from-indigo-700 to-gray-300 via-black text-white h-[72px] 
-    border-b-2 ">                                                                                                                       
-      <div className="inline-block py-4 ml-2 text-xl font-semibold lg:text-2xl lg:ml-4 lg:mt-2 ">Iris & Dinuro Private Limited</div>
-      <nav className="flex inline-block justify-self-end mr-2 text-[10px] font-medium float-right list-none py-5 lg:mr-4  lg:text-[20px]">
-      <ul className="flex justify-center space-x-4 lg:space-x-8">      
-        <li><a href="https://www.dinuro.com/irisweb/index.aspx" className="hover:text-purple-400">Home</a></li>
-        <li><a href="https://www.dinuro.com/irisweb/projects.html" className="hover:text-purple-400">About Us</a></li>
-        <li><a href="https://www.dinuro.com/irisweb/Servicesnew.html" className="hover:text-purple-400">Services</a></li>
-        <li><a href="https://www.dinuro.com/irisweb/ContactUs.aspx" className="hover:text-purple-400">Contact Us</a></li>
-      </ul>
-      </nav>
-    </header>
+      <header className="fixed top-0 left-0 w-full z-20 bg-gradient-to-tr from-indigo-700 to-gray-300 via-black text-white h-[72px] border-b-2 flex justify-between items-center px-4">
+  <div className="ml-2 text-xs font-semibold sm:text-xl md:text-2xl md:ml-3 md:mt-2 lg:text-2xl lg:ml-4 lg:mt-2">Iris & Dinuro Private Limited</div>
+  <nav className="text-[10px] font-medium sm:text-[12px] md:text-[15px] lg:text-[20px]">
+    <ul className="flex space-x-2 lg:space-x-8">
+      <li><a href="https://www.dinuro.com/irisweb/index.aspx" className="hover:text-purple-400">Home</a></li>
+      <li><a href="https://www.dinuro.com/irisweb/projects.html" className="hover:text-purple-400">About Us</a></li>
+      <li><a href="https://www.dinuro.com/irisweb/Servicesnew.html" className="hover:text-purple-400">Services</a></li>
+      <li><a href="https://www.dinuro.com/irisweb/ContactUs.aspx" className="hover:text-purple-400">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section className="container px-12 py-8 mx-auto my-1 bg-gradient-to-br from-slate-50 to-indigo-200 rounded-3xl mt-[72px]">
+    <section className="container w-[450px] px-12 py-8 mx-auto my-1 bg-gradient-to-br from-slate-50 to-indigo-200 rounded-3xl mt-[72px] md:w-[600px] lg:w-[840px]">
 
     <h2 className="mb-4 text-2xl font-bold text-center uppercase">Contact Us Form</h2> {/*contact form heading*/}
 
     <form id="contactForm" className="p-6 bg-gray-200 rounded-lg shadow-md" onSubmit={handleSubmit}>
       {/*contact form inputs*/}
       <div className="mb-4">
-        <label for="fullName" className="block pb-1 text-gray-900">Full Name</label>
-        <input type="text" id="fullName" name="fullName" required
-               className="w-full px-4 py-2 border rounded-lg">
+        <label htmlFor="fullName" className="block pb-1 text-gray-900">Full Name: <span className="text-xl font-semibold text-red-600">*</span></label>
+        <input type="text" id="fullName" name="fullName" required className="w-full px-4 py-2 border rounded-lg">
       </input></div>
 
       <div className="mb-4">
-        <label for="email" className="block pb-1 text-gray-900">E-mail Address</label>
-        <input type="email" id="email" name="email" required
-               className="w-full px-4 py-2 border rounded-lg">
+        <label htmlFor="email" className="block pb-1 text-gray-900">E-mail Address: <span className="text-xl font-semibold text-red-600">*</span></label>
+        <input type="email" id="email" name="email" required className="w-full px-4 py-2 border rounded-lg">
       </input></div>
 
       <div className="mb-4">
-        <label for="phoneNumber" className="block pb-1 text-gray-900">Phone Number</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required
-               className="w-full px-4 py-2 border rounded-lg">
+        <label htmlFor="phoneNumber" className="block pb-1 text-gray-900">Phone Number: <span className="font-normal text-gray-500">(Optional)</span></label>
+        <input type="text" id="phoneNumber" name="phoneNumber" className="w-full px-4 py-2 border rounded-lg">
       </input></div>
 
       <div className="mb-4">
-        <label for="subject" className="block pb-1 text-gray-900">Subject</label>
-        <input type="text" id="subject" name="subject" required
-               className="w-full px-4 py-2 border rounded-lg">
+        <label htmlFor="subject" className="block pb-1 text-gray-900">Subject: <span className="text-xl font-semibold text-red-600">*</span></label>
+        <input type="text" id="subject" name="subject" required className="w-full px-4 py-2 border rounded-lg">
       </input></div>
 
       <div className="mb-4">
-        <label for="message" className="block pb-1 text-gray-900">Message</label>
-        <textarea id="message" name="messsage" required
-               className="w-full px-4 py-2 border rounded-lg">
+        <label htmlFor="message" className="block pb-1 text-gray-900">Message: <span className="text-xl font-semibold text-red-600">*</span></label>
+        <textarea id="message" name="messsage" required className="w-full px-4 py-2 border rounded-lg">
       </textarea></div>
       {/*contact form submission*/}  
       <button type="submit" className="w-full h-10 text-xl text-center text-white bg-blue-500 rounded-lg shadow-lg shadow-indigo-400 hover:shadow-indigo-700 hover:bg-blue-700">
@@ -84,10 +80,10 @@ const ContactUs = () => {
       </form>
     </section>
     
-    <section className="container px-12 py-8 mx-auto mt-6 bg-gradient-to-br from-slate-50 to-indigo-200 rounded-2xl">
+    <section className="container px-12 py-8 mx-auto mt-6 bg-gradient-to-br from-slate-50 to-indigo-200 rounded-2xl w-[450px] md:w-[600px] lg:w-[840px]">
       <div className="mb-4 text-2xl font-bold text-center uppercase"> Company Information </div> {/*company details*/}
 
-      <ul className="flex justify-center space-x-3 lg:space-x-32">
+      <ul className="flex justify-center -mx-1 space-x-2 lg:space-x-20 lg:mx-4">
         <li> 
         {/*location icon*/}  
           <svg  
@@ -132,7 +128,8 @@ const ContactUs = () => {
       </ul>
     </section>
     
-    <section className="container px-12 py-8 mx-auto mt-6 bg-gradient-to-br from-slate-50 to-indigo-200 rounded-2xl">{/*integrated map*/}
+    {/*map integration*/}
+    <section className="container px-12 py-8 mx-auto mt-6 bg-gradient-to-br from-slate-50 to-indigo-200 rounded-2xl md:w-[600px] lg:w-[840px]">
         <div className="p-6 bg-gray-300 shadow-md shadow-gray-600 rounded-2xl">
         <h2 className="mb-4 text-2xl font-bold text-center uppercase">Our Location</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.0981907588853!2d2.185449076186508!3d48.856337971331826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67b5599411cd7%3A0x40d406e9c78e98b6!2s13%20Rue%20de%20la%20Melonni%C3%A8re%2C%2092500%20Rueil-Malmaison%2C%20France!5e0!3m2!1sen!2slk!4v1739198452028!5m2!1sen!2slk"
@@ -146,16 +143,23 @@ const ContactUs = () => {
       </section>
       
       {/*footer section*/}
-      <footer className="w-full bg-gradient-to-tr from-indigo-700 to-gray-300 via-black text-white h-[72px]">
-        <div className="container px-4 mx-auto text-center">
-          <div className="pt-[10px] space-x-10 ">
-            <a href="" className="hover:text-purple-400">Facebook</a>
-            <a href="" className="hover:text-purple-400">Twitter</a>
-            <a href="https://www.linkedin.com/company/iris-paris/" className="hover:text-purple-400">LinkedIn</a>
-            </div>
-            <p className="pt-1">Iris & Dinuro Private Limited</p>
-        </div>
-      </footer>
+      <footer className="w-full bg-gradient-to-tr from-indigo-700 to-gray-300 via-black text-white h-[84px]">
+  <div className="container px-4 mx-auto text-center">
+    <div className="pt-[10px] space-x-8">
+      <a href="#" className="hover:text-[#4267B2]">
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
+      </a>
+      <a href="#" className="hover:text-[#55ACEE]">
+        <FontAwesomeIcon icon={faTwitter} size="2x" />
+      </a>
+      <a href="https://www.linkedin.com/company/iris-paris/" className="hover:text-[#0A66C2]">
+        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+      </a>
+    </div>
+    <p className="pt-[10px]">Iris & Dinuro Private Limited</p>
+  </div>
+</footer>
+
    
     </div>  
   );
